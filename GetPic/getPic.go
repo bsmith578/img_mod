@@ -1,4 +1,4 @@
-package getPic
+package GetPic
 
 import (
 	"fmt"
@@ -7,10 +7,12 @@ import (
 	"os"
 )
 
-func getPic() {
-	// URL of the image you want to download
-	//imageUrl := "https://images.pexels.com/photos/17929271/pexels-photo-17929271/free-photo-of-woman-standing-on-vineyard.jpeg"
-	imageUrl := "https://s3e8p5g8.rocketcdn.me/wp-content/uploads/2020/11/midwestern-state-university2.jpg"
+func DownloadPic() {
+	var imageUrl string
+
+	fmt.Print("Enter the image URL: ")
+
+	fmt.Scan(&imageUrl)
 
 	// Create an HTTP GET request
 	response, err := http.Get(imageUrl)
@@ -26,8 +28,10 @@ func getPic() {
 		return
 	}
 
+	fmt.Println("Downloading image " + imageUrl + "...done")
+
 	// Create a new file to save the image
-	outputFile, err := os.Create("downloaded_image.jpg")
+	outputFile, err := os.Create("colors.jpg")
 	if err != nil {
 		fmt.Println("Error creating the file:", err)
 		return
@@ -41,5 +45,5 @@ func getPic() {
 		return
 	}
 
-	fmt.Println("Image downloaded and saved as 'downloaded_image.jpg'")
+	fmt.Println("Image downloaded and saved as 'colors.jpg'")
 }

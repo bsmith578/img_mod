@@ -1,4 +1,4 @@
-package colorText
+package ColorText
 
 import (
 	"io/ioutil"
@@ -8,7 +8,7 @@ import (
 	"golang.org/x/image/font/gofont/goregular"
 )
 
-func colorText() {
+func ColorText() {
 	const W = 500
 	const H = 300
 

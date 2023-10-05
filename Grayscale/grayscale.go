@@ -1,4 +1,4 @@
-package grayscale
+package Grayscale
 
 import (
 	"fmt"
@@ -8,9 +8,12 @@ import (
 	"os"
 )
 
-func grayscale() {
+func Grayscale() {
+
+	fmt.Print("Grayscaling image, Processing grayscale")
+
 	// Open the original image
-	reader, err := os.Open("image.png")
+	reader, err := os.Open("colors.jpg")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
@@ -46,8 +49,11 @@ func grayscale() {
 		}
 	}
 
+	fmt.Println("...done")
+	fmt.Print("Saving Grayscaled Image to colors_gray_scale.jpg")
+
 	// Save the grayscale image
-	grayFile, err := os.Create("gray_image.png")
+	grayFile, err := os.Create("colors_gray_scale.jpg")
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
@@ -55,5 +61,5 @@ func grayscale() {
 	defer grayFile.Close()
 	png.Encode(grayFile, grayImg)
 
-	fmt.Println("Grayscale image saved.")
+	fmt.Println("...done")
 }
