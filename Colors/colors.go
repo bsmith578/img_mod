@@ -36,7 +36,7 @@ func GetRGB() {
 	}
 	defer outputFile.Close()
 
-	fmt.Println("Saving Pixel Values to color_pixel_counts.txt")
+	fmt.Print("Saving Pixel Values to color_pixel_counts.txt")
 
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
@@ -47,5 +47,5 @@ func GetRGB() {
 		}
 	}
 
-	fmt.Print("...done")
+	fmt.Println("...done")
 }
